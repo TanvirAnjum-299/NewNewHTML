@@ -23,3 +23,44 @@ def initial_phonebook():
           temp.append(str(input("Enter date of Birth(dd/mm/yy):")))
           if temp[j]=='' or temp[j]=='':
              temp[j]=None
+        if j==4:
+           temp.append(str(input("Enter Category(Family/Friends/Work/Others):")))
+           if temp[j]=='' or temp[j]=='':
+              temp[j]=None
+        #that means phone_book is a 2-D array and temp is a 1-D array
+    print(phone_book)
+    return phone_book
+def menu():
+   print("*******************************************************")
+   print("Smartphone Directory")
+   print("*******************************************************")
+   print("You can perform the following operations in this phonebook")
+   print("1.Add a new contact")
+   print("2.Remove an existing contact")
+   print("3.Delete all contacts")
+   print("4.Search for a contact")
+   print("5.Display all contacts")
+   print("6.Exit Phonebook")
+   choice=(int(input("Please enter your choice:")))
+   return choice
+def add_contact(pb):
+   dip=[]
+   for i in range(len(pb[0])):
+      if i==0:
+         dip.append(str(input("Enter Name:")))
+      if i==1:
+         dip.append(int(input("Enter Number:")))
+      if i==2:
+         dip.append(str(input("Enter a e-Mail adress")))
+      if i==3:
+         dip.append(str(input("Enter date of birth (dd/mm/yy):")))
+      if i==4:
+         dip.append(str(input("Enter Category(Family/Friends/Work/Others):")))
+   pb.append(dip)
+def remove_existing(pb):
+   query=str(input("Please enter the name of the contact you wish to remove"))
+   for i in range(len(pb)):
+      if query==pb[i][0]:
+         temp +=1
+         print(pb.pop(i))
+
